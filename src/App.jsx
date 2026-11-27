@@ -1,10 +1,9 @@
 /* ======================================================================
    MealMitra — App.jsx
-   Single-file React app (React 18 via CDN + Babel Standalone).
-   No imports/exports: React is a global. Data persists in localStorage.
-   All demo data is MOCK / SAMPLE data and is labelled as such in the UI.
+   React 18 application bundled with Vite.
+   Data persists in localStorage. Demo data is MOCK / SAMPLE data.
    ====================================================================== */
-const {
+import React, {
   useState,
   useEffect,
   useMemo,
@@ -12,7 +11,7 @@ const {
   useCallback,
   useContext,
   createContext,
-} = React;
+} from "react";
 
 /* ---------- 1. CONSTANTS & HELPERS ---------- */
 const PREFIX = "mealmitra:v1:";
@@ -1270,17 +1269,15 @@ function ToastProvider({ children }) {
       const o = opts || {},
         id = uid();
       setItems((a) =>
-        a
-          .slice(-3)
-          .concat([
-            {
-              id,
-              title,
-              msg: o.msg,
-              type: o.type || "success",
-              action: o.action,
-            },
-          ]),
+        a.slice(-3).concat([
+          {
+            id,
+            title,
+            msg: o.msg,
+            type: o.type || "success",
+            action: o.action,
+          },
+        ]),
       );
       setTimeout(() => remove(id), o.duration || 4000);
       return id;
@@ -8208,8 +8205,8 @@ function App() {
   );
 }
 
-/* ---------- 14. MOUNT ---------- */
-function Root() {
+/* ---------- 14. ROOT COMPONENT ---------- */
+export default function Root() {
   return (
     <ErrorBoundary>
       <ToastProvider>
@@ -8218,4 +8215,3 @@ function Root() {
     </ErrorBoundary>
   );
 }
-ReactDOM.createRoot(document.getElementById("root")).render(<Root />);
