@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="MealMitra: predict surplus before it exists. Food demand forecasting and surplus redistribution for kitchens and verified NGOs." />
+  <meta name="theme-color" content="#07231A" />
+  <title>MealMitra</title>
+
+  <!-- Favicon (inline, no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2307231A'/%3E%3Cpath d='M8 22c2-8 7-12 16-12-1 9-6 13-14 13' fill='none' stroke='%23C6F36B' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <!-- Fonts: Instrument Serif (display), Inter (UI), DM Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- All styling lives in style.css -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- React mounts here. The splash below shows until App.jsx renders. -->
+  <div id="root">
+    <div class="boot-splash" id="boot-splash">
+      <div class="boot-splash__mark" aria-hidden="true"></div>
+      <div class="boot-splash__word">MealMitra<span>.</span></div>
+    </div>
+  </div>
+
+  <noscript>MealMitra needs JavaScript enabled to run.</noscript>
+
+  <!-- React 18 + ReactDOM (pinned UMD builds) -->
+  <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+
+  <!-- Babel Standalone: compiles JSX in the browser -->
+  <script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
+
+  <!-- Your whole app. Must be opened through Live Server (http://), not by double-clicking the file. -->
+  <script type="text/babel" data-presets="react" src="App.jsx"></script>
+</body>
+</html>
